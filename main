@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int setbitcounter(int a, int b){
+  int acount=0, bcount=0,store;
+  while(a>=1){
+    store = a&1;
+    a=a>>1;
+    if(store==1){
+      acount++;
+    }
+  }
+  while(b>=1){
+    store = b&1;
+    b=b>>1;
+    if(store==1){
+      bcount++;
+    }
+  }
+ return acount+bcount;
+}
+
+int main() {
+  int a,b;
+  cout<<"Enter Numbers"<<endl;
+  cin>>a>>b;
+  cout<<setbitcounter(a,b)<<endl;
+  return 0;
+}
